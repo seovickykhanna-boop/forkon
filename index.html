@@ -1,0 +1,309 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>John Doe | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: #111827;
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        section {
+            padding: 100px 0 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding-top: 140px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .experience-item,
+        .project-item {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact button:hover {
+            background: #2563eb;
+        }
+
+        footer {
+            background: #111827;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background: #111827;
+                position: absolute;
+                right: 0;
+                top: 60px;
+                width: 200px;
+                display: none;
+            }
+
+            nav ul.show {
+                display: block;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <h1>John Doe</h1>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-photo">
+        <h2>Software Developer</h2>
+        <p>Building clean, modern, and scalable web applications.</p>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>About</h2>
+        <p>
+            I am a passionate developer with experience in building web applications
+            using modern technologies. I enjoy solving problems, creating clean UI,
+            and delivering efficient solutions.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Git</div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Frontend Developer - Company Name</h3>
+            <p><em>2022 - Present</em></p>
+            <p>Developed responsive web applications and improved UI performance.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Web Developer Intern - Company Name</h3>
+            <p><em>2021 - 2022</em></p>
+            <p>Assisted in building and maintaining client websites.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-item">
+            <img src="https://via.placeholder.com/600x300" alt="Project 1">
+            <h3>Project Title One</h3>
+            <p>Short description of the project goes here.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project-item">
+            <img src="https://via.placeholder.com/600x300" alt="Project 2">
+            <h3>Project Title Two</h3>
+            <p>Short description of the project goes here.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 John Doe. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("nav-links").classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>
+```
